@@ -16,16 +16,24 @@ class SimpleQACommand extends Command
         $helper = $this->getHelper('question');
 
         $question = new ChoiceQuestion('YES or NO?', ['yes', 'no']);
+//        $question->setValidator(function ($answer) {
+//            if (!in_array($answer, ['yes'])) {
+//                throw new \RuntimeException(
+//                    'Nee, oder?! YES o NO, no es tan dificil imbecil!'
+//                );
+//            }
+//            return $answer;
+//        });
 
         $answer = $helper->ask($input, $output, $question);
 
         $output->writeln('Your answer: ' . $answer);
 
-        $question = new ChoiceQuestion('TRUE or FALSE?', ['true', 'false']);
-
-        $answer = $helper->ask($input, $output, $question);
-
-        $output->writeln('Your answer: ' . $answer);
+//        $question = new ChoiceQuestion('TRUE or FALSE?', ['true', 'false']);
+//
+//        $answer = $helper->ask($input, $output, $question);
+//
+//        $output->writeln('Your answer: ' . $answer);
 
         return 0;
     }

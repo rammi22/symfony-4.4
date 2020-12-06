@@ -16,13 +16,14 @@ class SimpleQACommandTest extends KernelTestCase
         $command = $application->find('app:question-answer');
         $commandTester = new CommandTester($command);
 
-        $commandTester->setInputs(['yes', 'true']);
+        $commandTester->setInputs(['no'/*, 'true'*/]);
 
         $commandTester->execute(['command' => $command->getName()]);
 
         $output = $commandTester->getDisplay();
 
-        $this->assertStringContainsString('Your answer: yes', $output);
-        $this->assertStringContainsString('Your answer: true', $output);
+        $this->assertStringContainsString('Your answer: no', $output);
+//        $this->assertStringContainsString('Nee, oder?! YES o NO, no es tan dificil imbecil!', $output);
+//        $this->assertStringContainsString('Your answer: true', $output);
     }
 }
