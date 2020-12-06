@@ -1,12 +1,10 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\Tests\E2E\Command;
 
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
-//use Symfony\Component\Console\Helper\HelperSet;
-//use Symfony\Component\Console\Helper\QuestionHelper;
 
 class SimpleQACommandTest extends KernelTestCase
 {
